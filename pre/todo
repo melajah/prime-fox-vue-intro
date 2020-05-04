@@ -1,0 +1,33 @@
+slide intro
+compare vue n jquery
+whats is vue Directives ?
+  - attribut khusus yang di buat oleh vue, attribut tersebut di awali dengan v.
+  - fungsi nya untuk menjalankan perintah. 
+
+Directif ada 4
+1. Direktif Data Binding (v-html, v-text, v-model, v-bind) - (.html, .text, .value)
+2. Direktif event (v-on:click v-on:submit.prevent)
+3. Direktif conditional (v-if, v-else, v-else-if, v-show)
+4. Derektif looping (v-for)
+
+demo
+create html
+import vue cdn
+init vue
+  - pertama kita harus initialisi vue
+  - setelah init vue, kita membutuh sebuah element untuk merender data, sehingga kita bisa mendeklarasikan syntax vue di html kita atau kita bisa menggunakan vue direktif di html tsb.
+create element to render 
+ada propery data, dengan typenya object.
+contoh kasusnya kecilnya tempat menyimpan data dan data tsb bakal kalian gunain di html kalian.
+
+contohnya:
+data: {
+  greetings: "hello vuejs"
+}
+
+{{ greetings }}
+
+v-text
+v-html
+v-bind fungsinya untuk memanipulasi attribute html kalian
+v-model funsinya untuk mengubah data dan menampilkan data, biasanya digunakan di inputan form.

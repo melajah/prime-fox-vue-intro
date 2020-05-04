@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue Intro</title>
+  <style type="text/css">
+    .bg-primary {
+      background-color: blue;
+    }
+    .text-white {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!-- di dalam element ini, kita bisa menggunakan syntax vue/ vue direktif -->
+    
+    <h1> {{greetings}} </h1>
+    <span v-text="greetings"></span>
+
+    <ul v-html="name"></ul>
+    <!-- v-bind -->
+    <div class="bg-primary" v-bind:class="color">
+      <!-- v-bind:class v-bind:src (image) -->
+      hello
+    </div>
+  </div>
+
+  <!-- pastikan yang diload vuejs cdnnya -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    // menggunakan disini
+    new Vue({
+      el: "#app",
+      data: {
+        greetings: "hello vuejs",
+        name: "<li>Ahmad Muzakki</li>",
+        color: "text-white"
+      } 
+    })
+  </script>
+</body>
+</html>
+
+
