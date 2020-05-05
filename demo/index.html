@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Belajar Vuejs</title>
+</head>
+<body>
+  
+  <div id="app">
+    user adalah {{ user }}
+
+    <button v-on:click="login" v-if="user == false">login</button>
+    <!-- preventDefault -->
+    <div v-else-if="user == true">
+      <form v-on:submit.prevent="submitTodo"> 
+        <input type="text" v-model="newTodo">
+        <input type="submit" value="submit">
+      </form>
+
+      <!-- v-for: untuk looping -->
+      <ul>
+        <li 
+          v-for="(todo, index) in todos" 
+        >
+          title: {{ todo.title }}. 
+          category: {{ todo.category }}
+          <button 
+            v-on:click="deleteTodo(index)"
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+
+    <h1 v-show="user == true">
+      sudah login woy
+    </h1>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script type="text/javascript">
+    // kita akan menggunakan vue di dalam sini
+    new Vue({
+      el: "#app",
+      data: { // state
+        user: false,
+        newTodo: "",
+        todos: [
+          {
+            title: "Belajar js kemarin",
+            category: "done"
+          },
+          {
+            title: "Belajar jquery sekarang",
+            category: "doing"
+          }
+        ] // array of object
+      },
+      methods: {
+        login() {
+          console.log(this, "ini this")
+          console.log(this.user, "ini this.user")
+          this.user = true;
+        },
+        submitTodo() {
+          console.log(this.newTodo, ">>>>>>>> ter-submit")
+          this.todos.push({
+            title: this.newTodo,
+            category: "todo"
+          })
+          console.log(this.todos, "data todos []")
+        },
+        deleteTodo(index) {
+          console.log(index, "index <<<<<<")
+          this.todos.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Vue direktif ?
+- attribute khusus yang dibuat oleh vue, attribute tsb diawali dengan huruf "v"
+- fungsinya untuk menjalankan perintah.
+
+
+vue direktif ada 4:
+1. Data binding (v-html, v-text, v-bind, v-model) - (.html, .text, .attr)
+2. Event (v-on:click, v-on:submit) - (.click, .submit)
+3. Conditional (v-if, v-else-if, v-else, v-show) 
+4. Looping (v-for)
